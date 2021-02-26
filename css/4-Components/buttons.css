@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  # 4-Components : BUTTON AND LINK
+\*------------------------------------*/
+
+.button {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--couleur-primaire-background-1);
+    color: var(--couleur-primaire-front-1);
+    /* outline: none; */
+  }
+  
+  .button:hover,
+  .button:focus {
+    background-color: var(--couleur-secondaire-background-1);
+    color: var(--couleur-secondaire-front-1);
+  }
+  
+  .link {
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid var(--couleur-border-link);
+    background-color: var(--couleur-secondaire-background-3);
+    color: var(--couleur-secondaire-front-3);
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    background-color: var(--couleur-primaire-background-1);
+    color: var(--couleur-primaire-front-1);
+  }
