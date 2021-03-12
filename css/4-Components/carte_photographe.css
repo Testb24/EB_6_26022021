@@ -1,0 +1,106 @@
+/*------------------------------------*\
+# 4-Components : CARTE PHOTO avec ratio
+\*------------------------------------*/
+
+#collection_photographes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: cadetblue;
+  }
+
+.container_ALL {
+    width: 90%;
+    max-width: 350px;
+    /* background-color: palegoldenrod; */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 2px solid black;
+}
+
+@media (min-width: 580px) {
+  
+    .container_ALL {
+      min-width: 250px;
+      /* max-width: 100%; */
+      width: calc(50% - 40px);
+      margin: 20px;
+    }
+  }
+  @media (min-width: 900px) {
+  
+    .container_ALL {
+      width: calc(33% - 20px);
+    }
+  }
+
+.under_part_img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: palevioletred;
+}
+    .under_part_img > h2 {
+        color: var(--couleur-primaire-front-2);
+        text-decoration: none;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    a.under_part_img {
+        text-decoration: none;
+    }
+
+.under_part_txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: peru;
+}
+
+    .under_part_txt > h3 {
+        color: var(--couleur-secondaire-front-3);
+        padding: 0;
+        margin: 0;
+    }
+
+    .under_part_txt > p {
+        color: black;
+        padding: 5px 0;
+        margin: 0;
+    }
+
+    .under_part_txt > p.price {
+        color: var(--couleur-secondaire-front-2);
+    }
+
+.under_part_link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 5%;
+    margin-bottom: 10px;
+    background-color: powderblue;
+}
+
+    .under_part_link > P {
+        margin: 2px;
+    }
+.square {
+    float:left;
+    position: relative;
+    width: 80%;
+    padding-bottom : 80%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    border-radius: 50%;
+}
+
+.img_1-1{background-image:url('https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg');}
+.img_testa{background-image:url("/Portrait_Nora.jpg")};

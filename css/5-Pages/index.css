@@ -1,0 +1,99 @@
+/*------------------------------------*\
+# 5-Pages : INDEX
+\*------------------------------------*/
+
+.index_header {
+    /* background-color:grey; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* float: left; */
+    align-items: center;
+    justify-content: space-around;
+}
+
+svg {
+    width: calc(40% - 60px);
+    height: auto;
+    padding: 50px 30px;
+    min-width: 200px;
+    display: inline-block;
+}
+#filtre {
+    width: 60%;
+    min-width: 300px;
+    background-color: seagreen;
+}
+#link_main {
+    width: 100%;
+    text-align: center;
+}
+#filtres {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: chartreuse;
+}
+
+#filtres > p {
+    margin: 2px;
+}
+/* #title {
+    width: 20%;
+    background-color: saddlebrown;
+} */
+
+
+.index_main {
+    /* background-color: lavenderblush; */
+    width: 100%;
+    height: auto;
+    background-color: burlywood;
+}
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#title > h1 {
+    /* background-color: red; */
+    padding: 0;
+    margin: 0;
+    color: var(--couleur-secondaire-front-3);
+}
+.yellow {
+    background-color: yellow ;
+    color: red;
+}
+
+@media (min-width: 1000px) {
+    .index_header {
+        /* background-color:grey; */
+        width: 70%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        float: left;
+        align-items: center;
+    }
+
+    #filtre {height: 100px;}
+    #title {height: 100px;
+    background-color: seagreen;
+}
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    /* width: 98%;
+    margin: auto; */
+}

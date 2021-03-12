@@ -1,0 +1,133 @@
+/*------------------------------------*\
+# 4-Components : CARTE PHOTO avec ratio
+\*------------------------------------*/
+
+#collection_photographes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* background-color: crimson; */
+  }
+
+.container_carte_photographe {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    /* background-color: cadetblue; */
+  }
+  
+  .carte_photographe {
+    width: 100%;
+    padding-bottom: 140%;
+    background-color: white;    
+    /* background-color:cadetblue; */
+    border-radius: 15px;
+    /* box-shadow: 0px 0px 25px #dfdfdf; */
+    position: relative;
+    /* background-color:coral; */
+  }
+  
+  .carte_photographe > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .carte_photographe_txt {
+    width: calc(100% - 40px);
+    height: 50px;
+    padding: 0px 25px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: darkgoldenrod;
+  }
+  
+  .carte_photographe_img {
+    width: 80%;
+    height: calc(57% - 0px);
+    /* min-height: 400px; */
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+
+  }
+  
+  @media (min-width: 580px) {
+  
+    .container_carte_photographe {
+      min-width: 200px;
+      max-width: 100%;
+      width: calc(50% - 20px);
+      padding: 5px 10px 10px 10px;
+    }
+  }
+  @media (min-width: 900px) {
+  
+    .container_carte_photographe {
+      min-width: 200px;
+      width: calc(26% - 20px);
+      padding: 5px 10px 10px 10px;
+    }
+  }
+
+h2.index_photographe {
+    text-align: center;
+    padding-top: 10px;
+    margin: auto;
+    /* background-color: yellowgreen; */
+}
+
+.text  {
+    text-align: center;
+    margin: 0;
+    margin: auto;
+    padding: 0;
+}
+
+.text > h3 {
+    padding: 0;
+    margin: 0;
+}
+
+p  {
+    text-align: center;
+    margin: 0;
+    margin: auto;
+    padding: 0;
+}
+
+.text_link {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10%;
+    margin-bottom: 50px;
+}
+
+.text_link > p {
+    margin-top: 5px;
+}
+.under_part {
+    padding-top: 10px;
+    margin: auto;
+}
+
+.under_part > h3 {
+    font-size: calc(14px + 100%);
+}
+
+.under_part > h2 {
+    color: red;
+}
+
+.under_part > p {
+    color: navy;
+}

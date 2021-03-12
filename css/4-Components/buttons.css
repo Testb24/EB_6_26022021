@@ -31,7 +31,7 @@
   color: var(--couleur-primaire-front-1);
 }
 
-.select {
+/* .select {
   width: 200px;
   overflow: hidden;
   height: 50px;
@@ -42,12 +42,4 @@
   width: calc(200px - 30px);;
   height: calc(50px - 30px);
   border-radius: 0;
-}
-
-body {
-  background-color: grey;
-}
-
-.blue {
-  background-color:blue;
-}
+} */
