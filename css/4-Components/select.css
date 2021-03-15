@@ -75,6 +75,7 @@ right: 0;
 z-index: 99;
 background-color: var(--couleur-primaire-background-1);
 color: var(--couleur-primaire-front-1);
+overflow: hidden;
 }
 
 /* Hide the items when the select box is closed: */

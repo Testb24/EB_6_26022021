@@ -15,7 +15,7 @@ function find_photographer(photographers) {
 
     for (i=0;i<photographers.length;i++) {
 
-        if (photographers[i].name == photographe) {
+        if (photographers[i].id == photographe) {
             // console.log(photographers[i]);
             build_top(photographers[i]);
             return photographers[i].id

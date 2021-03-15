@@ -23,6 +23,7 @@ for (i = 0; i < l; i++) {
     c.setAttribute("class", "border");
     if (j == ll) {c.setAttribute("class", "border");};
     c.addEventListener("click", function(e) {
+      console.log("coucou1 c");
         /* When an item is clicked, update the original select box,
         and the selected item: */
         var y, i, k, s, h, sl, yl;
@@ -52,6 +53,9 @@ for (i = 0; i < l; i++) {
   }
   x[i].appendChild(b);
   a.addEventListener("click", function(e) {
+    console.log("coucou2 a");
+    console.log(x);
+    x[0].classList.toggle("border_bottom_none");
     /* When the select box is clicked, close any other select boxes,
     and open/close the current select box: */
     e.stopPropagation();

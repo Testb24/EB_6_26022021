@@ -119,3 +119,12 @@ p {
     margin-left: 20px;
     height: 35px;
 }
+
+
+
+
+
+.border_bottom_none {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
