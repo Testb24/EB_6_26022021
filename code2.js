@@ -11,7 +11,7 @@ fetch("./folder.json")
 function index(photographers) {
     const number_photographer = photographers.length;
     for (i=0;i<number_photographer;i++) {
-        console.log(photographers[i]);
+        // console.log(photographers[i]);
         create_carte_photographe(photographers[i]);
     }
 };
@@ -24,7 +24,7 @@ function create_carte_photographe(photographe) {
     b = document.createElement("A");
     b.setAttribute("class","under_part_img");
     b.setAttribute("href","");
-    setAttributes(b,{"class": "under_part_img", "href":""})
+    setAttributes(b,{"class": "under_part_img", "href": "page_2.html?photographe="+photographe.name})
 
     b0 = document.createElement("DIV");
     setAttributes(b0,{"class": "square","style": "background-image: url('Sample_Photos/Photographers_ID_Photos/"+photographe.portrait+"')"});
@@ -59,7 +59,7 @@ function create_carte_photographe(photographe) {
     a.appendChild(b);
     a.appendChild(c);
     a.appendChild(d);
-    console.log(a);
+    // console.log(a);
 
     
     const placeto = document.getElementById("collection_photographes");
