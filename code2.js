@@ -27,7 +27,7 @@ function create_carte_photographe(photographe) {
     setAttributes(b,{"class": "under_part_img", "href":""})
 
     b0 = document.createElement("DIV");
-    setAttributes(b0,{"class": "square","style": "background-image: url('/Sample_Photos/Photographers_ID_Photos/"+photographe.portrait+"')"});
+    setAttributes(b0,{"class": "square","style": "background-image: url('Sample_Photos/Photographers_ID_Photos/"+photographe.portrait+"')"});
     b1 = document.createElement("H2");
     b1.setAttribute("class", "index_photographe");
     b1.innerHTML = photographe.name;
