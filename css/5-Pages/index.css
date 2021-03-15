@@ -24,7 +24,7 @@ svg {
 #filtre {
     width: 60%;
     min-width: 300px;
-    background-color: seagreen;
+    /* background-color: seagreen; */
 }
 #link_main {
     width: 100%;
@@ -38,7 +38,7 @@ svg {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
 }
 
 #filtres > p {
@@ -54,7 +54,7 @@ svg {
     /* background-color: lavenderblush; */
     width: 100%;
     height: auto;
-    background-color: burlywood;
+    /* background-color: burlywood; */
 }
 #title {
     display: flex;
@@ -69,8 +69,8 @@ svg {
     color: var(--couleur-secondaire-front-3);
 }
 .yellow {
-    background-color: yellow ;
-    color: red;
+    /* background-color: yellow ; */
+    /* color: red; */
 }
 
 @media (min-width: 1000px) {
@@ -87,7 +87,7 @@ svg {
 
     #filtre {height: 100px;}
     #title {height: 100px;
-    background-color: seagreen;
+    /* background-color: seagreen; */
 }
 }
 
