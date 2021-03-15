@@ -68,10 +68,6 @@ svg {
     margin: 0;
     color: var(--couleur-secondaire-front-3);
 }
-.yellow {
-    /* background-color: yellow ; */
-    /* color: red; */
-}
 
 @media (min-width: 1000px) {
     .index_header {
