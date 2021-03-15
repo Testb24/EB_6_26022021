@@ -1,0 +1,125 @@
+/*------------------------------------*\
+# 5-Pages : PHOTOGRAPHE
+\*------------------------------------*/
+
+#photographe_header {
+    /* background-color:grey; */
+    width: 90%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* float: left; */
+    align-items: center;
+}
+
+svg {
+    width: calc(20% - 60px);
+    height: auto;
+    padding: 50px 30px;
+    min-width: 200px;
+    display: inline-block;
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* background-color: cadetblue; */
+    width: calc(100% - 60px);
+    height: auto;
+    padding: 0 30px;
+    background-color: var(--couleur-secondaire-background-2);
+    border-radius: 10px;
+    padding-top: 30px;
+}
+
+#txt {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#filtres {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* background-color: chartreuse; */
+}
+
+h1 {
+    color: var(--couleur-primaire-front-2);
+    padding-top: 0;
+    margin-top: 0;
+}
+
+h2 {
+    color: var(--couleur-secondaire-front-3);
+}
+
+p {
+    color: var(--couleur-secondaire-front-2);
+}
+
+.square_photographe {
+    float:left;
+    position: relative;
+    width: 95%;
+    padding-bottom : 95%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    border-radius: 50%;
+}
+
+#top_img{
+    width: 30%;
+    min-width: 100px;
+    max-width: 180px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: cadetblue; */
+}
+
+#photographe_header {
+    /* background-color:grey; */
+    width: 90%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* float: left; */
+    align-items: center;
+}
+
+#photographe_main {
+    width: 90%;
+    margin: auto;
+    height: auto;
+}
+
+#main_top {
+    display: flex;
+    align-items: baseline;
+}
+.select_width {
+    width: 200px;
+    margin-left: 20px;
+    height: 35px;
+}
+
+#collection_photos {
+    
+}

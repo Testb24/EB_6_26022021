@@ -1,8 +1,8 @@
 /*------------------------------------*\
-# 4-Components : CARTE PHOTOGRAPHE avec ratio
+# 4-Components : CARTE PHOTO avec ratio
 \*------------------------------------*/
 
-#collection_photographes {
+#collection_photos {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -11,7 +11,7 @@
     /* background-color: cadetblue; */
   }
 
-.container_ALL {
+.container_carte_photo {
     width: 90%;
     max-width: 380px;
     /* background-color: palegoldenrod; */
@@ -23,7 +23,7 @@
 
 @media (min-width: 700px) {
   
-    .container_ALL {
+    .container_carte_photo {
       min-width: 250px;
       /* max-width: 100%; */
       width: calc(45% - 40px);
@@ -32,19 +32,19 @@
   }
   @media (min-width: 1000px) {
   
-    .container_ALL {
+    .container_carte_photo {
       width: calc(30% - 20px);
     }
   }
 
   @media (min-width: 1600px) {
-      .container_ALL {
+      .container_carte_photo {
       margin: 20px 70px;
       }
   }
 
   @media (min-width: 2000px) {
-    .container_ALL {
+    .container_carte_photo {
     margin: 20px 100px;
     /* max-width: 450px; */
     max-width: 20%;
@@ -104,17 +104,35 @@
     .under_part_link > P {
         margin: 2px;
     }
-.square {
+.square_photo {
     float:left;
     position: relative;
-    width: 80%;
-    padding-bottom : 80%; /* = width for a 1:1 aspect ratio */
+    width: 95%;
+    padding-bottom : 95%; /* = width for a 1:1 aspect ratio */
     margin:1.66%;
     background-position:center center;
     background-repeat:no-repeat;
     background-size:cover;
-    border-radius: 50%;
+    border-radius: 3%;
 }
 
-.img_1-1{background-image:url('https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg');}
-.img_testa{background-image:url("/Portrait_Nora.jpg")};
+.photo_txt {
+    width: 95%;
+    margin:1.66%;
+    display: flex;
+    justify-content: space-between;
+}
+.photo_txt > div {
+    display: flex;
+}
+
+.photo_txt > div > p {
+    display: flex;
+    margin-left: 20px;
+}
+
+.photo_txt > p, .photo_txt > div > p {
+    padding-top: 0;
+    margin-top: 0;
+    color: var(--couleur-secondaire-front-3);
+}

@@ -11,10 +11,10 @@
   /* outline: none; */
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   background-color: var(--couleur-secondaire-background-1);
   color: var(--couleur-secondaire-front-1);
+  cursor: pointer;
 }
 
 .link {
