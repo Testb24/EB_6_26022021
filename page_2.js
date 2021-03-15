@@ -5,7 +5,8 @@ fetch("./folder.json")
         return resp.json();
     })
     .then(function(data){
-        find_photographer(data.photographers);
+        let id = find_photographer(data.photographers);
+        build_collection(id, data.media);
     });
 
 function find_photographer(photographers) {
@@ -17,7 +18,7 @@ function find_photographer(photographers) {
         if (photographers[i].name == photographe) {
             // console.log(photographers[i]);
             build_top(photographers[i]);
-            build_collection(photographers[i]);
+            return photographers[i].id
         }
 
     }
@@ -56,6 +57,63 @@ function build_top(photographe) {
     
 };
 
-function build_collection(photographe) {
+function build_collection(id,media) {
+
+    console.log("aaa");
+    console.log(id);
+    console.log(media);
+
+    for (var i = 0;media.length;i++){
+        if (media[i].photographerId == id){
+            build_picture(media[i]);
+        }
+    }
+};
+
+function build_picture(picture) {
+ 
+    var a, b, c, c0, c1, c10, c11;
+
+    a = document.createElement("DIV");
+    a.setAttribute("class", "container_carte_photo");
+
+    b = document.createElement("DIV");
+    setAttributes(b, {"class":"square_photo","style":"background-image: url('/Sample_Photos//MimiKeel.jpg')"});
+
+    c = document.createElement("DIV");
+    c.setAttribute("class","photo_txt");
+
+    c0 = document.createElement("P");
+    c0.innerHTML = 
+    c1 = document.createElement("DIV");
+
+    c10 = document.createElement("P");
+    c11 = document.createElement("P");
+
+    c1.appendChild(c10);
+    c1.appendChild(c11);
+    c.appendChild(c0);
+    c.appendChild(c1);
+    a.appendChild(b);
+    a.appendChild(c);
+
+    const base = document.getElementById("collection_photos");
+    base.appendChild(a);
+
+    console.log(a);
 
 };
+
+
+{/* <div class="container_carte_photo">A
+    <div class="square_photo" B
+        style="background-image: url('/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg')">
+    </div>
+    <div class="photo_txt"> C
+        <p>Solitude</p>     C0
+        <div>            C1
+            <p>70 €</p>    C10
+            <p>12 <3</p>   C11
+        </div>
+    </div>
+</div> */}
