@@ -90,12 +90,12 @@ function build_picture(id, picture) {
 
     if (type == "photo") {
         b = document.createElement("DIV");
-        setAttributes(b, { "class": "square_photo", "style": "background-image: url('/Sample_Photos/" + id + "/" + link + "')" });
+        setAttributes(b, { "class": "square_photo", "style": "background-image: url('Sample_Photos/" + id + "/" + link + "')" });
     } else if (type == "video") {
         // b = document.createElement("DIV");
         // b.setAttribute("class","square_photo");
         b = document.createElement("VIDEO");
-        setAttributes(b, { "class": "square_video", "src": "/Sample_Photos/" + id + "/" + link + "", "controls": "" });
+        setAttributes(b, { "class": "square_video", "src": "Sample_Photos/" + id + "/" + link + "", "controls": "" });
         // b.appendChild(b0);
     }
 
