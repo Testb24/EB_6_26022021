@@ -87,10 +87,14 @@ function build_picture(id, picture) {
     a = document.createElement("DIV");
     a.setAttribute("class", "container_carte_photo");
 
+    let indice = "";
+    if(id==930){
+        indice="2";
+    }
 
     if (type == "photo") {
         b = document.createElement("DIV");
-        setAttributes(b, { "class": "square_photo", "style": "background-image: url('Sample_Photos/" + id + "/" + link + "')" });
+        setAttributes(b, { "class": "square_photo", "style": "background-image: url('Sample_Photos/" + id + "/" +indice + link + "')" });
     } else if (type == "video") {
         // b = document.createElement("DIV");
         // b.setAttribute("class","square_photo");
