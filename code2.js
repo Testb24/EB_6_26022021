@@ -5,47 +5,80 @@ fetch("./folder.json")
         return resp.json();
     })
     .then(function (data) {
-        index(data.photographers);
+        let tag = find_tag();
+        if (tag != false) {
+            active_tag(tag.toLowerCase());
+        }
+        index(data.photographers, tag);
+        // window.history.pushState
+        // window.history.pushState('','', '/index.html');
     });
 
+function find_tag() {
+    let params_index = new URLSearchParams(document.location.search.substring(1));
+    let tag_url = params_index.get("tag");
+    if (tag_url === null) {
+        tag_url = false;
+    } else {
+        tag_url = '#' + tag_url
+    }
+    return tag_url;
+}
 function reload() {
     var tag = this.innerHTML;
-    console.log(tag);
 
     // const tag = document.getElementsByClassName("link");
     // const temp_tag = Object.values(tag);
-    // console.log(temp_tag);
     // temp_tag.forEach(link => {
     //     link.addEventListener("click", active_tag)
     // });
-
-    active_tag(tag.toLowerCase());
 
     fetch("./folder.json")
         .then(function (resp) {
             return resp.json();
         })
         .then(function (data) {
-            index(data.photographers);
+            if (active_tag(tag.toLowerCase())) {
+                tag = false;
+            };
+            index(data.photographers, tag);
+            tag = tag.substring(1);
+            window.history.pushState('','', '/index.html?tag='+tag);
         });
 
 };
 
 function active_tag(tag) {
+    let no_tag = false;
+
     const tag1 = document.getElementsByClassName("link");
     const temp_tag1 = Object.values(tag1);
-    // console.log(temp_tag1[0]);
+
     for (var i = 0; i < temp_tag1.length; i++) {
-        if (temp_tag1[i].innerHTML.toLowerCase() == tag) {
-            console.log(temp_tag1[i].classList.contains("active_tag"))
-            // if (temp_tag1[i].classList.contains("active_tag")) {
+        if (temp_tag1[i].innerHTML.toLowerCase() == tag ||
+            temp_tag1[i].innerHTML.toLowerCase() + 's' == tag ||
+            temp_tag1[i].innerHTML.toLowerCase() == tag + 's') {
+            if (!temp_tag1[i].classList.contains("active_tag")) {
                 temp_tag1[i].setAttribute("class", "active_tag link");
-            // } else {
-                // temp_tag1[i].setAttribute("class", "link");
-            // }
-            console.log(temp_tag1[i]);
+            } else {
+                temp_tag1[i].setAttribute("class", "link");
+                no_tag = true;
+            }
+
         }
     }
+
+    const tag_actif = document.getElementsByClassName("active_tag");
+    const temp_tag_actif = Object.values(tag_actif);
+
+    temp_tag_actif.forEach(elt => {
+        if (elt.innerHTML.toLowerCase() != tag &&
+            elt.innerHTML.toLowerCase() != tag + 's' &&
+            elt.innerHTML.toLowerCase() + 's' != tag)
+            elt.setAttribute("class", "link");
+    });
+
+    return no_tag;
 }
 
 
@@ -58,18 +91,26 @@ function active_tag(tag) {
 
 
 
-function index(photographers) {
+function index(photographers, tag) {
     const number_photographer = photographers.length;
     const placeto = document.getElementById("collection_photographes");
     if (placeto !== null) {
         placeto.innerHTML = "";
     }
     for (i = 0; i < number_photographer; i++) {
-        // console.log(photographers[i]);
-        create_carte_photographe(photographers[i]);
+        if (tag != false) {
+            var tag_temp = tag.substring(1);
+            if (photographers[i].tags.includes(tag_temp.toLowerCase())
+                || photographers[i].tags.includes(tag_temp.toLowerCase() + 's')
+                || photographers[i].tags.includes(tag_temp.substring(0, tag_temp.length - 1).toLowerCase())) {
+                create_carte_photographe(photographers[i]);
+            }
+        } else {
+            create_carte_photographe(photographers[i]);
+        }
     }
-    const tag = document.getElementsByClassName("link");
-    const temp_tag = Object.values(tag);
+    const tag_2 = document.getElementsByClassName("link");
+    const temp_tag = Object.values(tag_2);
     temp_tag.forEach(link => {
         link.addEventListener("click", reload)
     });
@@ -120,7 +161,6 @@ function create_carte_photographe(photographe) {
     a.appendChild(b);
     a.appendChild(c);
     a.appendChild(d);
-    // console.log(a);
 
 
     const placeto = document.getElementById("collection_photographes");
