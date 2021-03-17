@@ -18,7 +18,7 @@ console.log(window.location.pathname);
 function find_tag() {
     let params_index = new URLSearchParams(document.location.search.substring(1));
     let tag_url = params_index.get("tag");
-    if (tag_url === null || tag_url=="false") {
+    if (tag_url === null || tag_url == "false") {
         tag_url = false;
     } else {
         tag_url = '#' + tag_url
@@ -49,8 +49,12 @@ function reload() {
             console.log(window.location.origin);
             console.log(window.location.pathname);
             console.log(window.location.origin + window.location.pathname);
-            window.history.pushState(window.location.origin + window.location.pathname, '', '/index.html?tag=' + tag);
             
+            if (window.location.origin == "https://testb24.github.io") {
+                window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
+            } else {
+                window.history.pushState(window.location.origin + window.location.pathname, '', '/index.html?tag=' + tag);
+            }
             // window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
         });
 
