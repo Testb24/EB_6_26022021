@@ -46,14 +46,14 @@ function reload() {
             if (tag != false) {
                 tag = tag.substring(1);
             }
-            console.log(window.location.origin);
-            console.log(window.location.pathname);
-            console.log(window.location.origin + window.location.pathname);
-            console.log("aaa");
+            // console.log(window.location.origin);
+            // console.log(window.location.pathname);
+            // console.log(window.location.origin + window.location.pathname);
+            // console.log("aaa");
             if (window.location.origin == "https://testb24.github.io") {
-                console.log("bbb");
+                // console.log("bbb");
                 var temp_url = window.location.origin + window.location.pathname;
-                console.log(temp_url);
+                // console.log(temp_url);
                 window.history.pushState(temp_url, '', '?tag=' + tag);
             } else {
                 window.history.pushState(window.location.origin + window.location.pathname, '', '?tag=' + tag);
