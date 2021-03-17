@@ -46,7 +46,11 @@ function reload() {
             if (tag != false) {
                 tag = tag.substring(1);
             }
+            console.log(window.location.origin)
+            console.log(window.location.pathname)
             window.history.pushState(window.location.origin + window.location.pathname, '', '/index.html?tag=' + tag);
+            
+            // window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
         });
 
 };
