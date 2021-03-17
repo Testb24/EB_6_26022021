@@ -56,7 +56,7 @@ function reload() {
                 console.log(temp_url);
                 window.history.pushState(temp_url, '', '?tag=' + tag);
             } else {
-                window.history.pushState(window.location.origin + window.location.pathname, '', '/index.html?tag=' + tag);
+                window.history.pushState(window.location.origin + window.location.pathname, '', '?tag=' + tag);
             }
             // window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
         });
