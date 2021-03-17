@@ -49,7 +49,7 @@ function reload() {
             console.log(window.location.origin);
             console.log(window.location.pathname);
             console.log(window.location.origin + window.location.pathname);
-            
+            console.log("aaa");
             if (window.location.origin == "https://testb24.github.io") {
                 window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
             } else {
