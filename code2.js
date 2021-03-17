@@ -51,7 +51,10 @@ function reload() {
             console.log(window.location.origin + window.location.pathname);
             console.log("aaa");
             if (window.location.origin == "https://testb24.github.io") {
-                window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
+                console.log("bbb");
+                var temp_url = window.location.origin + window.location.pathname;
+                console.log(temp_url);
+                window.history.pushState(temp_url, '', '?tag=' + tag);
             } else {
                 window.history.pushState(window.location.origin + window.location.pathname, '', '/index.html?tag=' + tag);
             }
