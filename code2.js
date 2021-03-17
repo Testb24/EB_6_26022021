@@ -12,7 +12,9 @@ fetch("./folder.json")
         index(data.photographers, tag);
 
     });
-    
+console.log(window.location.origin);
+console.log(window.location.pathname);
+
 function find_tag() {
     let params_index = new URLSearchParams(document.location.search.substring(1));
     let tag_url = params_index.get("tag");
