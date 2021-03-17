@@ -26,11 +26,16 @@
   text-decoration: none;
 }
 
-.link:hover {
+.link:hover, .link:active {
   background-color: var(--couleur-primaire-background-1);
   color: var(--couleur-primaire-front-1);
 }
 
+P.active_tag {
+  background-color: red;
+  color: green;
+
+}
 /* .select {
   width: 200px;
   overflow: hidden;
