@@ -10,14 +10,13 @@ fetch("./folder.json")
             active_tag(tag.toLowerCase());
         }
         index(data.photographers, tag);
-        // window.history.pushState
-        // window.history.pushState('','', '/index.html');
-    });
 
+    });
+    
 function find_tag() {
     let params_index = new URLSearchParams(document.location.search.substring(1));
     let tag_url = params_index.get("tag");
-    if (tag_url === null) {
+    if (tag_url === null || tag_url=="false") {
         tag_url = false;
     } else {
         tag_url = '#' + tag_url
@@ -42,8 +41,10 @@ function reload() {
                 tag = false;
             };
             index(data.photographers, tag);
-            tag = tag.substring(1);
-            window.history.pushState('','', '/index.html?tag='+tag);
+            if (tag != false) {
+                tag = tag.substring(1);
+            }
+            window.history.pushState(window.location.origin + window.location.pathname, '', '/index.html?tag=' + tag);
         });
 
 };
