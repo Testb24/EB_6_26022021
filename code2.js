@@ -12,8 +12,6 @@ fetch("./folder.json")
         index(data.photographers, tag);
 
     });
-console.log(window.location.origin);
-console.log(window.location.pathname);
 
 function find_tag() {
     let params_index = new URLSearchParams(document.location.search.substring(1));
@@ -26,13 +24,13 @@ function find_tag() {
     return tag_url;
 }
 function reload() {
-    var tag = this.innerHTML;
-
-    // const tag = document.getElementsByClassName("link");
-    // const temp_tag = Object.values(tag);
-    // temp_tag.forEach(link => {
-    //     link.addEventListener("click", active_tag)
-    // });
+    let tag = this.innerHTML;
+    tag = tag.replace('#','');
+    if (window.location.pathname != "/index.html"){
+        let url2 = window.location.origin + "/index.html?tag=" + tag;
+        window.location.href = url2;
+        
+    }
 
     fetch("./folder.json")
         .then(function (resp) {
@@ -43,38 +41,33 @@ function reload() {
                 tag = false;
             };
             index(data.photographers, tag);
-            if (tag != false) {
-                tag = tag.substring(1);
-            }
-            // console.log(window.location.origin);
-            // console.log(window.location.pathname);
-            // console.log(window.location.origin + window.location.pathname);
-            // console.log("aaa");
             if (window.location.origin == "https://testb24.github.io") {
-                // console.log("bbb");
                 var temp_url = window.location.origin + window.location.pathname;
-                // console.log(temp_url);
                 window.history.pushState(temp_url, '', '?tag=' + tag);
             } else {
                 window.history.pushState(window.location.origin + window.location.pathname, '', '?tag=' + tag);
             }
-            // window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
+            window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
         });
 
 };
 
 function active_tag(tag) {
-    let no_tag = false;
 
+    let no_tag = false;
     const tag1 = document.getElementsByClassName("link");
     const temp_tag1 = Object.values(tag1);
 
     for (var i = 0; i < temp_tag1.length; i++) {
-        if (temp_tag1[i].innerHTML.toLowerCase() == tag ||
-            temp_tag1[i].innerHTML.toLowerCase() + 's' == tag ||
-            temp_tag1[i].innerHTML.toLowerCase() == tag + 's') {
+        let temp_tag_with = "#"+tag;
+
+        if (temp_tag1[i].innerHTML.toLowerCase() == temp_tag_with ||
+            temp_tag1[i].innerHTML.toLowerCase() + 's' == temp_tag_with ||
+            temp_tag1[i].innerHTML.toLowerCase() == temp_tag_with + 's') {
+
             if (!temp_tag1[i].classList.contains("active_tag")) {
                 temp_tag1[i].setAttribute("class", "active_tag link");
+                
             } else {
                 temp_tag1[i].setAttribute("class", "link");
                 no_tag = true;
@@ -87,24 +80,14 @@ function active_tag(tag) {
     const temp_tag_actif = Object.values(tag_actif);
 
     temp_tag_actif.forEach(elt => {
-        if (elt.innerHTML.toLowerCase() != tag &&
-            elt.innerHTML.toLowerCase() != tag + 's' &&
-            elt.innerHTML.toLowerCase() + 's' != tag)
+        if (elt.innerHTML.toLowerCase() != "#" + tag &&
+            elt.innerHTML.toLowerCase() != "#" +tag + 's' &&
+            elt.innerHTML.toLowerCase() + 's' !="#" + tag)
             elt.setAttribute("class", "link");
     });
 
     return no_tag;
 }
-
-
-// const button_test = document.getElementsByClassName("button_lvl_selector");
-// const temp = Object.values(button_test);
-
-// temp.forEach(link => {
-//     link.addEventListener("click", calcul)
-// });
-
-
 
 function index(photographers, tag) {
     const number_photographer = photographers.length;
@@ -114,14 +97,16 @@ function index(photographers, tag) {
     }
     for (i = 0; i < number_photographer; i++) {
         if (tag != false) {
-            var tag_temp = tag.substring(1);
-            if (photographers[i].tags.includes(tag_temp.toLowerCase())
-                || photographers[i].tags.includes(tag_temp.toLowerCase() + 's')
-                || photographers[i].tags.includes(tag_temp.substring(0, tag_temp.length - 1).toLowerCase())) {
+
+            if (photographers[i].tags.includes(tag.toLowerCase())
+                || photographers[i].tags.includes(tag.toLowerCase() + 's')
+                || photographers[i].tags.includes(tag.substring(0, tag.length - 1).toLowerCase())) {
                 create_carte_photographe(photographers[i]);
+
             }
         } else {
             create_carte_photographe(photographers[i]);
+            
         }
     }
     const tag_2 = document.getElementsByClassName("link");

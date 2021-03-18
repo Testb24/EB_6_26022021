@@ -48,6 +48,12 @@ function build_top(photographe) {
         a.appendChild(a0);
     });
 
+    const tag_2 = document.getElementsByClassName("link");
+    const temp_tag = Object.values(tag_2);
+    temp_tag.forEach(link => {
+        link.addEventListener("click", reload);
+    });
+
     let pic = document.getElementById("picture");
 
     setAttributes(pic, { "class": "square_photographe", "style": "background-image: url('Sample_Photos/Photographers_ID_Photos/" + photographe.portrait + "')" });
