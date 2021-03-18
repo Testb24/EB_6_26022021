@@ -10,7 +10,7 @@ fetch("./folder.json")
             active_tag(tag.toLowerCase());
         }
         index(data.photographers, tag);
-
+        
     });
 
 function find_tag() {
@@ -59,6 +59,7 @@ function active_tag(tag) {
     const temp_tag1 = Object.values(tag1);
 
     for (var i = 0; i < temp_tag1.length; i++) {
+        tag = tag.replace('#','');
         let temp_tag_with = "#"+tag;
 
         if (temp_tag1[i].innerHTML.toLowerCase() == temp_tag_with ||
@@ -82,8 +83,9 @@ function active_tag(tag) {
     temp_tag_actif.forEach(elt => {
         if (elt.innerHTML.toLowerCase() != "#" + tag &&
             elt.innerHTML.toLowerCase() != "#" +tag + 's' &&
-            elt.innerHTML.toLowerCase() + 's' !="#" + tag)
+            elt.innerHTML.toLowerCase() + 's' !="#" + tag){
             elt.setAttribute("class", "link");
+        }
     });
 
     return no_tag;
@@ -97,12 +99,11 @@ function index(photographers, tag) {
     }
     for (i = 0; i < number_photographer; i++) {
         if (tag != false) {
-
+            tag = tag.replace('#','');
             if (photographers[i].tags.includes(tag.toLowerCase())
                 || photographers[i].tags.includes(tag.toLowerCase() + 's')
                 || photographers[i].tags.includes(tag.substring(0, tag.length - 1).toLowerCase())) {
                 create_carte_photographe(photographers[i]);
-
             }
         } else {
             create_carte_photographe(photographers[i]);
