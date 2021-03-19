@@ -155,7 +155,7 @@ p {
 .galerie_container {
     height: 95%;
     width: 95%;
-    background-color: silver;
+    /* background-color: silver; */
     margin:auto;
     display: flex;
     flex-direction: row;
@@ -174,7 +174,7 @@ p {
     background-repeat:no-repeat;
     background-size: contain;
     border-radius: 5%;
-    background-color: sandybrown;
+    /* background-color: sandybrown; */
     margin: auto;
     
     position: relative;
@@ -202,7 +202,7 @@ p {
 .space{
     width: 10%;
     height:100%;
-    background-color: steelblue;
+    /* background-color: steelblue; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -217,7 +217,7 @@ p {
     padding: calc(10% + 4px);
     margin: 5px;    
     cursor: pointer;
-    background-color:tomato;
+    /* background-color:tomato; */
 }
 
 .mdiv {
@@ -241,7 +241,7 @@ p {
 
   .box{
       width: 100%;
-      background-color: yellow;
+      /* background-color: yellow; */
       height: 100%;
       display: flex;
       flex-direction: row;
@@ -252,7 +252,7 @@ p {
 
   .box_close{
     width: 100%;
-    background-color: orange;
+    /* background-color: orange; */
     height: 10%;
     display: flex;
     flex-direction: row;
@@ -263,9 +263,9 @@ p {
     cursor:pointer;
 }
 .box_close:hover{
-    background-color: rgb(255, 123, 0);
+    /* background-color: rgb(255, 123, 0); */
 }
 
     .box:hover{
-        background-color:rgb(255, 230, 0);
+        /* background-color:rgb(255, 230, 0); */
     }
