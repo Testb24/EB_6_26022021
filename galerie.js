@@ -12,6 +12,9 @@ function launch_galerie() {
 
 };
 
+const close_galerie = document.getElementById("close_galerie_button");
+close_galerie.addEventListener("click",close);
+
 function open_galerie(data, picture_id) {
     let media = data.media;   
     let photographers = data.photographers;
@@ -68,3 +71,9 @@ function find_picture_data(picture_id,photographer_id, media) {
 //         index(data.photographers, tag);
 
 //     });
+
+
+function close(){
+    const galerie = document.getElementById("galerie");
+    galerie.style.display = "none";
+}
