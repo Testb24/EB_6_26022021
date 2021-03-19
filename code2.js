@@ -112,6 +112,7 @@ function index(photographers, tag) {
     }
     const tag_2 = document.getElementsByClassName("link");
     const temp_tag = Object.values(tag_2);
+
     temp_tag.forEach(link => {
         link.addEventListener("click", reload)
     });

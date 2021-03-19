@@ -5,18 +5,21 @@ fetch("./folder.json")
         return resp.json();
     })
     .then(function (data) {
-        let id = find_photographer(data.photographers);
+        let id = find_photographer(data.photographers, true);
         build_collection(id, data.media);
     });
 
-function find_photographer(photographers) {
+function find_photographer(photographers, top) {
     let params = new URLSearchParams(document.location.search.substring(1));
     let photographe = params.get("photographe");
 
     for (i = 0; i < photographers.length; i++) {
 
         if (photographers[i].id == photographe) {
-            build_top(photographers[i]);
+
+            if (top) {
+                build_top(photographers[i]);
+            }
             return photographers[i].id
         }
 
@@ -94,18 +97,21 @@ function build_picture(id, picture) {
     a.setAttribute("class", "container_carte_photo");
 
     let indice = "";
-    if(id==930){
-        indice="2";
+    if (id == 930) {
+        indice = "2";
     }
 
     if (type == "photo") {
         b = document.createElement("DIV");
-        setAttributes(b, { "class": "square_photo", "style": "background-image: url('Sample_Photos/" + id + "/" +indice + link + "')" });
+        b.id = picture.id;
+        // console.log(picture.id);
+        // console.log(b.id);
+        setAttributes(b, { "class": "square_photo galerie_onclick", "style": "background-image: url('Sample_Photos/" + id + "/" + indice + link + "')" });
     } else if (type == "video") {
         // b = document.createElement("DIV");
         // b.setAttribute("class","square_photo");
         b = document.createElement("VIDEO");
-        setAttributes(b, { "class": "square_video", "src": "Sample_Photos/" + id + "/" + link + "", "controls": "" });
+        setAttributes(b, { "class": "square_video galerie_onclick", "src": "Sample_Photos/" + id + "/" + link + "", "controls": "" });
         // b.appendChild(b0);
     }
 
@@ -130,6 +136,13 @@ function build_picture(id, picture) {
 
     const base = document.getElementById("collection_photos");
     base.appendChild(a);
+
+    const media = document.getElementsByClassName("galerie_onclick");
+    const media_array = Object.values(media);
+
+    media_array.forEach(elt => {
+        elt.addEventListener("click", launch_galerie);
+    });
 
 };
 

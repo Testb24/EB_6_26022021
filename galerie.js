@@ -1,33 +1,68 @@
-const media = document.getElementsByClassName("clickable_galerie");
-const media_array = Object.values(media);
-
-media_array.forEach(elt => {
-    elt.addEventListener("click", open_galerie)
-});
-
 //Ouvre la galerie
-function open_galerie() {
-    this.
+function launch_galerie() {
+    let picture_id = this.id;
 
-    build_picture_galerie(photographer_id, id)
+    fetch("./folder.json")
+        .then(function (resp) {
+            return resp.json();
+        })
+        .then(function (data) {
+            open_galerie(data, picture_id);
+        })
+
 };
 
+function open_galerie(data, picture_id) {
+    let media = data.media;   
+    let photographers = data.photographers;
+    let photographer_id = find_photographer(data.photographers, false);
+    let picture = find_picture_data(picture_id,photographer_id , media);
+
+    const galerie = document.getElementById("galerie");
+    galerie.style.display = "block";
+    const base = document.getElementById("collection_photos");
+    // base.style.display = "none";
+
+    build_picture_galerie(picture,photographer_id);
+
+}
+
+function test() {
+    console.log("test_function");
+}
+
 //Construit la photo/vidéo demandée
-function build_picture_galerie(photographer_id, id) {
-    fetch()
+function build_picture_galerie(picture,photographer_id) {
+    const galerie = document.getElementById("galerie");
+    let a = document.createElement("DIV");
+    setAttributes(a, { "class": "galerie_square_photo", "style": "background-image: url('Sample_Photos/"+photographer_id+"/"+picture.image+ "')" });
+    galerie.appendChild(a);
+    console.log(galerie);
 }
 
 
 
-fetch("./folder.json")
-    .then(function (resp) {
-        return resp.json();
-    })
-    .then(function (data) {
-        let tag = find_tag();
-        if (tag != false) {
-            active_tag(tag.toLowerCase());
+{/* <div class="square_photo"
+    style="background-image: url('/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg')">
+</div> */}
+
+
+function find_picture_data(picture_id,photographer_id, media) {
+    for (var i = 0; i < media.length; i++) {
+        if (media[i].id == picture_id && media[i].photographerId == photographer_id) {
+            return media[i];
         }
-        index(data.photographers, tag);
-        
-    });
+    }
+}
+// fetch("./folder.json")
+//     .then(function (resp) {
+//         return resp.json();
+//     })
+//     .then(function (data) {
+//         let tag = find_tag();
+//         if (tag != false) {
+//             active_tag(tag.toLowerCase());
+//         }
+//         index(data.photographers, tag);
+
+//     });
