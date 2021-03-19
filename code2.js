@@ -43,11 +43,11 @@ function reload() {
             index(data.photographers, tag);
             if (window.location.origin == "https://testb24.github.io") {
                 var temp_url = window.location.origin + window.location.pathname;
-                window.history.pushState(temp_url, '', '?tag=' + tag);
+                window.location.pushState(temp_url, '', '?tag=' + tag);
             } else {
-                window.history.pushState(window.location.origin + window.location.pathname, '', '?tag=' + tag);
+                window.location.pushState(window.location.origin + window.location.pathname, '', '?tag=' + tag);
             }
-            window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
+            window.location.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
         });
 
 };
