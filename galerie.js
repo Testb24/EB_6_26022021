@@ -33,11 +33,13 @@ function test() {
 
 //Construit la photo/vidéo demandée
 function build_picture_galerie(picture,photographer_id) {
-    const galerie = document.getElementById("galerie");
-    let a = document.createElement("DIV");
-    setAttributes(a, { "class": "galerie_square_photo", "style": "background-image: url('Sample_Photos/"+photographer_id+"/"+picture.image+ "')" });
-    galerie.appendChild(a);
-    console.log(galerie);
+    // const galerie = document.getElementById("galerie");
+    // let a = document.createElement("DIV");
+    // setAttributes(a, { "class": "galerie_square_photo", "style": "background-image: url('Sample_Photos/"+photographer_id+"/"+picture.image+ "')" });
+    // galerie.appendChild(a);
+    // console.log(galerie);
+    const picture_place = document.getElementById("pic");
+    picture_place.setAttribute("src","Sample_Photos/"+photographer_id+"/"+picture.image);
 }
 
 
