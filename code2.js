@@ -26,26 +26,26 @@ function find_tag() {
 function reload() {
     let tag = this.innerHTML;
     tag = tag.replace('#','');
-    console.log(window.location.pathname.match("index.html"));
-    console.log("1234");
+    // console.log(window.location.pathname.match("index.html"));
+    // console.log("1234");
     if (window.location.pathname.match("index.html") === null){
-        console.log("c'est bien null");
-        let url6 = window.location.origin + window.location.pathname.split('/')[0] +"/index.html?tag=" + tag;
+        // console.log("c'est bien null");
+        // let url6 = window.location.origin + window.location.pathname.split('/')[0] +"/index.html?tag=" + tag;
         let urla = window.location.origin;
         for (var i = 0; i<window.location.pathname.split('/').length - 2 ; i++){
-            console.log("i : " + i);
+            // console.log("i : " + i);
 
             urla += "/" + window.location.pathname.split('/')[i+1];
-            console.log("urla + loop : " + urla);
+            // console.log("urla + loop : " + urla);
         }
         urla +="/index.html?tag=" + tag;
-        console.log("urla : "+ urla)
-        console.log(url6);
-        console.log(window.location.pathname);
-        console.log(window.location.pathname.split('/'));
-        console.log(window.location.pathname.split('/')[0]);
-        let url2 = window.location.origin + "/index.html?tag=" + tag;
-        console.log("here");
+        // console.log("urla : "+ urla)
+        // console.log(url6);
+        // console.log(window.location.pathname);
+        // console.log(window.location.pathname.split('/'));
+        // console.log(window.location.pathname.split('/')[0]);
+        // let url2 = window.location.origin + "/index.html?tag=" + tag;
+        // console.log("here");
         window.location.href = urla;
         
     }
@@ -59,17 +59,17 @@ function reload() {
                 tag = false;
             };
             index(data.photographers, tag);
-            console.log("=============================================")
-            console.log("ancestorOrigins : " + window.location.ancestorOrigins);
-            console.log("href     : " + window.location.href);
-            console.log("protocol : " + window.location.protocol);
-            console.log("host     : " + window.location.host);
-            console.log("hostname : " + window.location.hostname);
-            console.log("port     : " + window.location.port);
-            console.log("pathname : " + window.location.pathname);
-            console.log("search   : " + window.location.search);
-            console.log("hash     : " + window.location.hash);
-            console.log("origin   : " + window.location.origin);
+            // console.log("=============================================")
+            // console.log("ancestorOrigins : " + window.location.ancestorOrigins);
+            // console.log("href     : " + window.location.href);
+            // console.log("protocol : " + window.location.protocol);
+            // console.log("host     : " + window.location.host);
+            // console.log("hostname : " + window.location.hostname);
+            // console.log("port     : " + window.location.port);
+            // console.log("pathname : " + window.location.pathname);
+            // console.log("search   : " + window.location.search);
+            // console.log("hash     : " + window.location.hash);
+            // console.log("origin   : " + window.location.origin);
 
             if (window.location.origin == "https://testb24.github.io") {
                 console.log("13:47 test url");
