@@ -32,10 +32,10 @@ function reload() {
         console.log("c'est bien null");
         let url6 = window.location.origin + window.location.pathname.split('/')[0] +"/index.html?tag=" + tag;
         let urla = window.location.origin;
-        for (var i = 0; i<window.location.pathname.split('/').length - 1 ; i++){
+        for (var i = 0; i<window.location.pathname.split('/').length - 2 ; i++){
             console.log("i : " + i);
 
-            urla += "/" + window.location.pathname.split('/')[i];
+            urla += "/" + window.location.pathname.split('/')[i+1];
             console.log("urla + loop : " + urla);
         }
         urla +="/index.html?tag=" + tag;
