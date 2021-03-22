@@ -27,12 +27,12 @@ function reload() {
     let tag = this.innerHTML;
     tag = tag.replace('#','');
     console.log(window.location.pathname.match("index.html"));
-    console.log("123");
+    console.log("1234");
     if (window.location.pathname.match("index.html") === null){
         console.log("c'est bien null");
         let url6 = window.location.origin + window.location.pathname.split('/')[0] +"/index.html?tag=" + tag;
         let urla = window.location.origin;
-        for (var i = 0; i<window.location.pathname.split('/')[0].length - 1 ; i++){
+        for (var i = 0; i<window.location.pathname.split('/').length - 1 ; i++){
             console.log(i);
 
             urla += "/" + window.location.pathname.split('/')[i];
