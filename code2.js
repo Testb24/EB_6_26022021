@@ -71,21 +71,21 @@ function reload() {
             // console.log("hash     : " + window.location.hash);
             // console.log("origin   : " + window.location.origin);
 
-            if (window.location.origin == "https://testb24.github.io") {
-                console.log("13:47 test url");
-                var temp_url = "https://testb24.github.io/EB_6_26022021/";
-                var temp_url = window.location.origin + window.location.pathname;
-                console.log(temp_url);
-                window.history.pushState(temp_url, '', '?tag=' + tag);
+            // if (window.location.origin == "https://testb24.github.io") {
+                // console.log("13:47 test url");
+                // var temp_url = "https://testb24.github.io/EB_6_26022021/";
+                // var temp_url = window.location.origin + window.location.pathname;
+                // console.log(temp_url);
+                // window.history.pushState(temp_url, '', '?tag=' + tag);
                 // let url3 = window.location.origin + window.location.pathname + '?tag=' + tag;
                 // window.location.href = url3;
-            } else {
+            // } else {
                 // console.log("else")
                 // console.log(window.location.origin + window.location.pathname);
                 window.history.pushState(window.location.origin + window.location.pathname, '', '?tag=' + tag);
                 // let url3 = window.location.origin + window.location.pathname + '?tag=' + tag;
                 // window.location.href = url3;
-            }
+            // }
             // console.log("aaa");
             // window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
         });
