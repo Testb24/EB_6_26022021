@@ -42,19 +42,20 @@ function reload() {
             };
             index(data.photographers, tag);
             if (window.location.origin == "https://testb24.github.io") {
+                console.log("13:01 test url")
                 var temp_url = window.location.origin + window.location.pathname;
                 window.history.pushState(temp_url, '', '?tag=' + tag);
-                let url3 = window.location.origin + window.location.pathname + '?tag=' + tag;
-                window.location.href = url3;
+                // let url3 = window.location.origin + window.location.pathname + '?tag=' + tag;
+                // window.location.href = url3;
             } else {
-                console.log("else")
-                console.log(window.location.origin + window.location.pathname);
+                // console.log("else")
+                // console.log(window.location.origin + window.location.pathname);
                 window.history.pushState(window.location.origin + window.location.pathname, '', '?tag=' + tag);
-                let url3 = window.location.origin + window.location.pathname + '?tag=' + tag;
-                window.location.href = url3;
+                // let url3 = window.location.origin + window.location.pathname + '?tag=' + tag;
+                // window.location.href = url3;
             }
-            console.log("aaa");
-            window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
+            // console.log("aaa");
+            // window.history.pushState("https://testb24.github.io/EB_6_26022021/index.html", '', '/index.html?tag=' + tag);
         });
 
 };
@@ -179,9 +180,6 @@ function create_carte_photographe(photographe) {
     }
 };
 
-function image() {
-
-};
 
 function setAttributes(el, attrs) {
     for (var key in attrs) {

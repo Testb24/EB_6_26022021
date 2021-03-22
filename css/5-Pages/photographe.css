@@ -158,6 +158,7 @@ p {
     /* background-color: silver; */
     margin:auto;
     display: flex;
+		flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -217,7 +218,7 @@ p {
     padding: calc(10% + 4px);
     margin: 5px;    
     cursor: pointer;
-    /* background-color:tomato; */
+    background-color:tomato;
 }
 
 .mdiv {
@@ -241,7 +242,7 @@ p {
 
   .box{
       width: 100%;
-      /* background-color: yellow; */
+      background-color: yellow;
       height: 100%;
       display: flex;
       flex-direction: row;
@@ -252,7 +253,7 @@ p {
 
   .box_close{
     width: 100%;
-    /* background-color: orange; */
+    background-color: orange;
     height: 10%;
     display: flex;
     flex-direction: row;
@@ -262,14 +263,23 @@ p {
     top: 0;
     cursor:pointer;
 }
-/* .box_close:hover{
+.box_close:hover{
     background-color: rgb(255, 123, 0);
 }
 
     .box:hover{
         background-color:rgb(255, 230, 0);
-    } */
+    }
 
     .galerie_onclick {
         cursor: pointer;
     }
+
+
+		.test_vid {
+			width:auto;
+			max-width: 78%;
+			height:100%;
+			object-fit: contain;
+			/* background-color: slateblue; */
+	}

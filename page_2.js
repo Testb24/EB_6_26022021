@@ -77,10 +77,10 @@ function build_picture(id, picture) {
     var link, title, type;
 
     if (picture.image !== undefined) {
-        var temp = clean_name(picture.image);
+        var temp = clean_name_plus_type(picture.image);
         link = picture.image;
     } else if (picture.video !== undefined) {
-        var temp = clean_name(picture.video);
+        var temp = clean_name_plus_type(picture.video);
         link = picture.video;
     }
 
@@ -111,6 +111,9 @@ function build_picture(id, picture) {
         // b = document.createElement("DIV");
         // b.setAttribute("class","square_photo");
         b = document.createElement("VIDEO");
+        b.id = picture.id;
+        // console.log(b);
+        // console.log(b.id);
         setAttributes(b, { "class": "square_video galerie_onclick", "src": "Sample_Photos/" + id + "/" + link + "", "controls": "" });
         // b.appendChild(b0);
     }
@@ -146,7 +149,7 @@ function build_picture(id, picture) {
 
 };
 
-function clean_name(title) {
+function clean_name_plus_type(title) {
 
     var type;
 
