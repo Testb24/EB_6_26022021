@@ -41,8 +41,20 @@ function reload() {
                 tag = false;
             };
             index(data.photographers, tag);
+            console.log(window.location.ancestorOrigins);
+            console.log(window.location.href);
+            console.log(window.location.protocol);
+            console.log(window.location.host);
+            console.log(window.location.hostname);
+            console.log(window.location.port);
+            console.log(window.location.pathname);
+            console.log(window.location.search);
+            console.log(window.location.hash);
+            console.log(window.location.origin);
+
             if (window.location.origin == "https://testb24.github.io") {
-                console.log("13:01 test url")
+                console.log("13:01 test url");
+                var temp_url = "https://testb24.github.io/EB_6_26022021/";
                 var temp_url = window.location.origin + window.location.pathname;
                 window.history.pushState(temp_url, '', '?tag=' + tag);
                 // let url3 = window.location.origin + window.location.pathname + '?tag=' + tag;

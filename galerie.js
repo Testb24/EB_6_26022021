@@ -54,7 +54,9 @@ function build_media_galerie(picture, photographer_id) {
 
     }
 
-    
+    let url = window.location.origin + window.location.pathname + "?photographe=" + photographer_id + "&id=" + picture.id;
+    window.location.pushState(url,"","");
+
 
 }
 
@@ -96,7 +98,7 @@ async function load_next_picture() {
     console.log(photographer_id);
     console.log(media);
     var id_before, id_after;
-    for (var i = 0; i<media.length ;i++){
+    for (var i = 0; i < media.length; i++) {
 
     }
 }
