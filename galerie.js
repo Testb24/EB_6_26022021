@@ -53,9 +53,10 @@ function build_media_galerie(picture, photographer_id) {
         video_place.setAttribute("src", "Sample_Photos/" + photographer_id + "/" + picture.video);
 
     }
-
+    console.log("update url");
     let url = window.location.origin + window.location.pathname + "?photographe=" + photographer_id + "&id=" + picture.id;
-    window.location.pushState(url,"","");
+    console.log(url)
+    window.history.pushState(url, "", "");
 
 
 }
@@ -73,7 +74,6 @@ function find_picture_data(picture_id, photographer_id, media) {
 
 
 function close() {
-
     const galerie = document.getElementById("galerie");
 
     if (this.id == "galerie_container" && event.target == this || this.id != "galerie_container") {
@@ -82,6 +82,12 @@ function close() {
 }
 
 async function load_next_picture() {
+    console.log(this)
+    console.log(event.target)
+    if (event.target != this) {
+        return
+    }
+
     var direction = this.id;
     console.log(direction);
     if (direction == "left_space") {

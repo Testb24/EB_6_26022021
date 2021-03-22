@@ -54,7 +54,7 @@ function reload() {
             console.log("origin   : " + window.location.origin);
 
             if (window.location.origin == "https://testb24.github.io") {
-                console.log("13:01 test url");
+                console.log("13:47 test url");
                 var temp_url = "https://testb24.github.io/EB_6_26022021/";
                 var temp_url = window.location.origin + window.location.pathname;
                 window.history.pushState(temp_url, '', '?tag=' + tag);
