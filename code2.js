@@ -35,7 +35,7 @@ function reload() {
         for (var i = 0; i<window.location.pathname.split('/')[0].length - 1 ; i++){
             console.log(i);
 
-            urla += window.location.pathname.split('/')[i];
+            urla += "/" + window.location.pathname.split('/')[i];
             console.log("urla + loop : " + urla);
         }
         urla +="/index.html?tag=" + tag;
