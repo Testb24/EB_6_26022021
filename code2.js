@@ -41,16 +41,17 @@ function reload() {
                 tag = false;
             };
             index(data.photographers, tag);
-            console.log(window.location.ancestorOrigins);
-            console.log(window.location.href);
-            console.log(window.location.protocol);
-            console.log(window.location.host);
-            console.log(window.location.hostname);
-            console.log(window.location.port);
-            console.log(window.location.pathname);
-            console.log(window.location.search);
-            console.log(window.location.hash);
-            console.log(window.location.origin);
+            console.log("=============================================")
+            console.log("ancestorOrigins : " + window.location.ancestorOrigins);
+            console.log("href     : " + window.location.href);
+            console.log("protocol : " + window.location.protocol);
+            console.log("host     : " + window.location.host);
+            console.log("hostname : " + window.location.hostname);
+            console.log("port     : " + window.location.port);
+            console.log("pathname : " + window.location.pathname);
+            console.log("search   : " + window.location.search);
+            console.log("hash     : " + window.location.hash);
+            console.log("origin   : " + window.location.origin);
 
             if (window.location.origin == "https://testb24.github.io") {
                 console.log("13:01 test url");
