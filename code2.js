@@ -26,10 +26,23 @@ function find_tag() {
 function reload() {
     let tag = this.innerHTML;
     tag = tag.replace('#','');
-    if (window.location.pathname != "/index.html"){
+    console.log(window.location.pathname.match("index.html"));
+    console.log("123");
+    if (window.location.pathname.match("index.html") === null){
+        let url6 = window.location.origin + window.location.pathname.split('/')[0] +"/index.html?tag=" + tag;
+        let urla = window.location.origin;
+        for (var i = 0; i<window.location.pathname.split('/')[0].length - 1 ; i++){
+            urla += window.location.pathname.split('/')[i];
+        }
+        urla +="/index.html?tag=" + tag;
+        console.log("urla : "+ urla)
+        console.log(url6);
+        console.log(window.location.pathname);
+        console.log(window.location.pathname.split('/'));
+        console.log(window.location.pathname.split('/')[0]);
         let url2 = window.location.origin + "/index.html?tag=" + tag;
-        console.log("here")
-        window.location.href = url2;
+        console.log("here");
+        window.location.href = urla;
         
     }
 
