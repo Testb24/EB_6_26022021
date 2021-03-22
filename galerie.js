@@ -10,6 +10,7 @@ left_space.addEventListener("click", load_next_picture);
 const right_space = document.getElementById("right_space");
 right_space.addEventListener("click", load_next_picture);
 
+
 //Charge le json
 function launch_galerie() {
     let picture_id = this.id;
@@ -53,11 +54,9 @@ function build_media_galerie(picture, photographer_id) {
         video_place.setAttribute("src", "Sample_Photos/" + photographer_id + "/" + picture.video);
 
     }
-    console.log("update url");
-    let url = window.location.origin + window.location.pathname + "?photographe=" + photographer_id + "&id=" + picture.id;
-    console.log(url)
-    window.history.pushState(url, "", "");
 
+    let url = window.location.origin + window.location.pathname + "?photographe=" + photographer_id + "&id=" + picture.id;
+    window.history.pushState({ info: "add_pic_id" }, '', url);
 
 }
 
@@ -79,40 +78,80 @@ function close() {
     if (this.id == "galerie_container" && event.target == this || this.id != "galerie_container") {
         galerie.style.display = "none";
     }
+
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let photographer_id = params.get("photographe");
+
+    let url = window.location.origin + window.location.pathname + "?photographe=" + photographer_id;
+    window.history.pushState({ info: "add_pic_id" }, '', url);
 }
 
 async function load_next_picture() {
-    console.log(this)
-    console.log(event.target)
-    if (event.target != this) {
+
+    if (this.id == "right_space" && event.target.id != "right_arrow" && event.target.id != "right_space") {
         return
     }
 
     var direction = this.id;
     console.log(direction);
-    if (direction == "left_space") {
 
-    } else if (direction == "rigth_space") {
-
-    }
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let photographe = params.get("photographe");
+    let media_id = params.get("id");
+    console.log(photographe + " " + media_id);
 
     const data = await getData();
     let photographer_id = find_photographer(data.photographers, false);
     let media = data.media.filter(item => item.photographerId == photographer_id);
 
-    console.log(data);
-    console.log(photographer_id);
-    console.log(media);
-    var id_before, id_after;
-    for (var i = 0; i < media.length; i++) {
+    // console.log(media);
 
+    let id_before, id_after;
+    let i = 0;
+    // console.log(media_id);
+    // console.log(i)
+    while (media_id != media[i].id && i < media.length - 1) {
+        console.log(i);
+        console.log(media[i].id);
+        console.log(media_id);
+        i++;
     }
+
+    console.log(i);
+    console.log("length : " + media.length)
+    if (i == 0) {
+        id_before = media[media.length-1].id;
+        id_after = media[i + 1].id;
+    } else if (i >= media.length-1) {
+        id_before = media[i - 1].id;
+        id_after = media[0].id;
+    } else {
+        id_before = media[i - 1].id;
+        id_after = media[i + 1].id;
+    }
+
+    // console.log(i);
+    // console.log(id_before);
+    // console.log(id_after);
+    console.log(direction);
+    let picture;
+
+    if (direction == "left_space") {
+        picture = find_picture_data(id_before, photographer_id, media);
+        console.log(id_before);
+
+    } else if (direction == "right_space") {
+        console.log("right")
+        picture = find_picture_data(id_after, photographer_id, media);
+        console.log(id_after);
+    }
+
+    build_media_galerie(picture, photographer_id)
+
 }
 
-function filter_photographer(media, photographer_id) {
-    media = media.filter(item => item.photographerId == photographer_id)
-    return media;
-}
+// media = media.filter(item => item.photographerId == photographer_id)
+
 
 
 function getData() {

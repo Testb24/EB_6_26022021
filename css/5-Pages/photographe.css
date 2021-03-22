@@ -200,15 +200,7 @@ p {
     /* background-color: slateblue; */
 }
 
-.space{
-    width: 10%;
-    height:100%;
-    /* background-color: steelblue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
+
 
 .arrow {
     width: 1px;
@@ -240,6 +232,18 @@ p {
     Z-index: 2;
   }
 
+	.space{
+    width: 10%;
+    height:100%;
+    /* background-color: steelblue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+		cursor:pointer;
+		background-color: yellow;
+}
+
   .box{
       width: 100%;
       background-color: yellow;
@@ -267,7 +271,7 @@ p {
     background-color: rgb(255, 123, 0);
 }
 
-    .box:hover{
+    .box:hover, .space:hover{
         background-color:rgb(255, 230, 0);
     }
 
