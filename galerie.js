@@ -93,32 +93,21 @@ async function load_next_picture() {
     }
 
     var direction = this.id;
-    console.log(direction);
 
     let params = new URLSearchParams(document.location.search.substring(1));
     let photographe = params.get("photographe");
     let media_id = params.get("id");
-    console.log(photographe + " " + media_id);
 
     const data = await getData();
     let photographer_id = find_photographer(data.photographers, false);
     let media = data.media.filter(item => item.photographerId == photographer_id);
 
-    // console.log(media);
-
     let id_before, id_after;
     let i = 0;
-    // console.log(media_id);
-    // console.log(i)
     while (media_id != media[i].id && i < media.length - 1) {
-        console.log(i);
-        console.log(media[i].id);
-        console.log(media_id);
         i++;
     }
 
-    console.log(i);
-    console.log("length : " + media.length)
     if (i == 0) {
         id_before = media[media.length-1].id;
         id_after = media[i + 1].id;
@@ -130,29 +119,18 @@ async function load_next_picture() {
         id_after = media[i + 1].id;
     }
 
-    // console.log(i);
-    // console.log(id_before);
-    // console.log(id_after);
-    console.log(direction);
     let picture;
 
     if (direction == "left_space") {
         picture = find_picture_data(id_before, photographer_id, media);
-        console.log(id_before);
 
     } else if (direction == "right_space") {
-        console.log("right")
         picture = find_picture_data(id_after, photographer_id, media);
-        console.log(id_after);
     }
 
     build_media_galerie(picture, photographer_id)
 
 }
-
-// media = media.filter(item => item.photographerId == photographer_id)
-
-
 
 function getData() {
     return new Promise((resolve, reject) => {
