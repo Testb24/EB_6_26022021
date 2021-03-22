@@ -28,6 +28,7 @@ function reload() {
     tag = tag.replace('#','');
     if (window.location.pathname != "/index.html"){
         let url2 = window.location.origin + "/index.html?tag=" + tag;
+        console.log("here")
         window.location.href = url2;
         
     }
@@ -57,6 +58,7 @@ function reload() {
                 console.log("13:47 test url");
                 var temp_url = "https://testb24.github.io/EB_6_26022021/";
                 var temp_url = window.location.origin + window.location.pathname;
+                console.log(temp_url);
                 window.history.pushState(temp_url, '', '?tag=' + tag);
                 // let url3 = window.location.origin + window.location.pathname + '?tag=' + tag;
                 // window.location.href = url3;
