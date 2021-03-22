@@ -104,6 +104,7 @@ async function load_next_picture() {
 
     let id_before, id_after;
     let i = 0;
+
     while (media_id != media[i].id && i < media.length - 1) {
         i++;
     }
@@ -128,9 +129,12 @@ async function load_next_picture() {
         picture = find_picture_data(id_after, photographer_id, media);
     }
 
-    build_media_galerie(picture, photographer_id)
+    build_media_galerie(picture, photographer_id);
 
 }
+// const data;
+// const data = await getData();
+
 
 function getData() {
     return new Promise((resolve, reject) => {
@@ -139,6 +143,7 @@ function getData() {
                 return resp.json();
             })
             .then(data => {
+                let data_result = data;
                 let data_result = data;
                 resolve(data_result);
             })
