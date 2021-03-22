@@ -104,18 +104,11 @@ function build_picture(id, picture) {
     if (type == "photo") {
         b = document.createElement("DIV");
         b.id = picture.id;
-        // console.log(picture.id);
-        // console.log(b.id);
         setAttributes(b, { "class": "square_photo galerie_onclick", "style": "background-image: url('Sample_Photos/" + id + "/" + indice + link + "')" });
     } else if (type == "video") {
-        // b = document.createElement("DIV");
-        // b.setAttribute("class","square_photo");
         b = document.createElement("VIDEO");
         b.id = picture.id;
-        // console.log(b);
-        // console.log(b.id);
         setAttributes(b, { "class": "square_video galerie_onclick", "src": "Sample_Photos/" + id + "/" + link + "", "controls": "" });
-        // b.appendChild(b0);
     }
 
     c = document.createElement("DIV");
