@@ -144,7 +144,6 @@ function getData() {
             })
             .then(data => {
                 let data_result = data;
-                let data_result = data;
                 resolve(data_result);
             })
     })
