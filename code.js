@@ -23,6 +23,8 @@ for (i = 0; i < l; i++) {
     c.setAttribute("class", "border");
     if (j == ll) {c.setAttribute("class", "border");};
     c.addEventListener("click", function(e) {
+        update_collection();
+        console.log(this.innerHTML);
         /* When an item is clicked, update the original select box,
         and the selected item: */
         var y, i, k, s, h, sl, yl;
@@ -87,3 +89,8 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+function update_collection() {
+  console.log("aaa");
+  console.log(this.innerText);
+};
