@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>P6_Photographe
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="map_photographe.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header id="photographe_header">
+        <a href="index.html">
+            <img src="logo.svg" alt="Fisheye Home page">
+        </a>
+
+        <div id="top">
+
+            <div id="txt">
+                <div id="top_txt">
+                    <h1 id="name">Mimi Keel</h1>
+                    <h2 id="place">London, UK</h2>
+                    <p id="tagline">Voir le beau dans le quotidien</p>
+                    <div id="filtres">
+                    </div>
+                </div>
+
+                <div id="top_btn">
+                    <button id="btn_form" class="button">
+                        Contactez-moi
+                    </button>
+                </div>
+            </div>
+
+            <div id="top_img">
+                <div id="picture"></div>
+            </div>
+
+    </header>
+
+    <main id="photographe_main">
+
+        <div id="main_top">
+            <h3>Trier par</h3>
+            <div class="custom-select select_width" style="width:200px;">
+                <select>
+                    <option>Popularité</option>
+                    <option>Date</option>
+                    <option>Titre</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="collection_photos"></div>
+
+        <!-- <div id="galerie" class="galerie">
+            <div id="galerie_container" class="galerie_container">
+
+                <div id="left_space" class="space_side">
+                    <div class="arrow left"></div>
+                </div>
+
+                <div class="space_main">
+                    <img id="pic" class="pic_galerie">
+                    <video id="video" class="video_galerie" controls>
+                    </video>
+                </div>
+
+                <div id="right_space" class="space_side">
+                    <div id="right_arrow" class="arrow right"></div>
+                    <div id="close_galerie_button" class="box_close">
+                        <div class="mdiv">
+                            <div class="md"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+        </div> -->
+        <!-- <div class="c_test"> -->
+        <!-- <div id="galerie" class="galerie"> -->
+
+        <!-- <div id="galerie_container" class="galerie_container"> -->
+        <!-- <div id="left_space" class="space_side"> -->
+        <!-- <div class="arrow left"></div> -->
+        <!-- </div> -->
+        <!-- <div class=""> -->
+        <!-- <img id="pic" class="pic_galerie"> -->
+        <!-- <video id="video" class="video_galerie" controls>
+                    </video> -->
+        <!-- </div> -->
+
+        <!-- <div id="right_space" class="space_side"> -->
+        <!-- <div id="right_arrow" class="arrow right"></div> -->
+        <!-- <div id="close_galerie_button" class="box_close"> -->
+        <!-- <div class="mdiv"> -->
+        <!-- <div class="md"></div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+
+        <div class="container">
+            <div id="galerie" class="galerie">
+
+                <div class="box1">111
+                </div>
+
+                <div class="box2">
+                    <img id="pic" class="pic_galerie"
+                        src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGljdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80">
+                    <!-- <img id="pic" class="pic_galerie"> -->
+                </div>
+
+                <div class="box3">333
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+</body>
+
+<!-- <script src="code.js"></script>
+<script src="code2.js"></script>
+<script src="page_2.js"></script>
+<script src="galerie.js"></script>
+<script src="form.js"></script> -->
+<script>
+    const click_btn = document.getElementById("btn_form");
+    click_btn.addEventListener("click", functiontest);
+    const picture_place = document.getElementById("pic");
+
+    function functiontest() {
+    console.log("aaa");
+    let picture_link ="Sample_Photos/930/Sport_Sky_Cross.jpg";
+    picture_place.setAttribute("src", picture_link);
+    }
+
+</script>
+
+</html>
